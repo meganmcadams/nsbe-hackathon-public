@@ -1,0 +1,135 @@
+:root {
+    --primary: #ff6978;
+    --secondary: #8b1417;
+    --tertiary: #30343f;
+}
+
+body {
+    background-color: var(--tertiary);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    object-fit: cover;
+    background-size: cover;
+}
+
+.secondary-btn {
+    background-color: var(--secondary);
+    color: white;
+}
+
+.secondary-btn:hover {
+    filter: brightness(120%);
+    color: white !important;
+    transition-property: filter;
+    transition-duration: 0.3s;
+}
+
+.header-block {
+    width: 100%;
+    background-color: var(--primary);
+    height: 20vh;
+    display:inline-flex;
+
+}
+
+.history {
+    height: 65vh;
+    overflow-y: auto;
+}
+
+.textbox {
+    color: white;
+    border: 1px black solid;
+    border-radius: 10px;
+    padding: 6px;
+    width: fit-content;
+}
+
+.received {
+    align-self: left;
+    background-color: grey;
+}
+
+.sent {
+    align-self: right;
+    background-color: darkgrey;
+    margin-left: auto;
+}
+
+.content-block {
+    margin-top: 20px;
+    max-width: 90vw;
+    min-width: 40vw;
+    width: 500px;
+    background-color: var(--tertiary);
+    border-radius: 10px;
+    opacity: 80%;
+}
+
+.abs-image {
+    position: absolute;
+    z-index: 10;
+}
+
+@keyframes walk {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(15vw);
+    }
+  }
+
+  .move {
+    position: absolute;
+    left: 0;
+    top: 50vh;
+    width: 200px;
+    height: auto;
+    transform: translateX(-100%);
+    animation: walk 2s ease-in-out;
+}
+
+@keyframes walk2 {
+    0% {
+      transform: translateX(15vw);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .move_back {
+    position: absolute;
+    left: 0;
+    top: 50vh;
+    width: 200px;
+    height: auto;
+    transform: translateX(15vw);
+    animation: walk2 2s ease-in-out;
+}
+
+.finished-image {
+    position: absolute;
+    left: 0;
+    top: 50vh;
+    width: 200px;
+    height: auto;
+    transform: translateX(15vw);
+}
+
+
+.instructions-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: #30343f;
+    z-index: 10;
+    max-height: 95vh;
+    max-width: 95vw;
+    overflow: auto;
+}

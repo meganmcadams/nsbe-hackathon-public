@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <body style="background-image:url('static/assets/backgrounds/Yodabackground.jpg');" >
+
+        <div class="instructions-card" id="instructions">
+            <h2 class="text-center">Welcome to Charripm!</h2>
+            <small class="text-muted text-small"><i>The idea of this web app is to allow users to chat
+                with any character of their choice using ChatGPT for text and FakeYou
+                for voice synthesization.
+            </i></small>
+            <p class="mt-3">Using this web application, you can speak to one
+                of five fictional characters: Yoda, Spongebob, Harry Potter,
+                Walter White, and Shrek. 
+            </p>
+            <p>To pick a different character to talk to, select a character
+                from the drop-down at the top-left of the screen.
+            </p>
+            <p>To chat, type a message in the textbox at the bottom of the screen
+                and click "Enter" on your keyboard or "Send" on the screen.
+            </p>
+            <p>For feedback with grammar or spelling, check the checkbox beneath
+                the textbox.
+            </p>
+            <button class="btn secondary-btn" onclick="close_instructions();">Close</button>
+        </div>
+
+        <div class="header-block">
+            <div style="position: absolute;" class="dropdown m-3">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Yoda
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" onclick="updateCharacter('Yoda');" href="#">Yoda</a>
+                  <a class="dropdown-item" onclick="updateCharacter('Spongebob');" href="#">Spongebob</a>
+                  <a class="dropdown-item" onclick="updateCharacter('Harry_Potter');" href="#">Harry Potter</a>
+                  <a class="dropdown-item" onclick="updateCharacter('Walter_White');" href="#">Walter White</a>
+                  <a class="dropdown-item" onclick="updateCharacter('Shrek');" href="#">Shrek</a>
+                </div>
+              </div>
+            <h1 class="fw-bold m-auto">Charripm</h1>
+        </div>
+
+        <input id="character" value="Yoda" readonly class="textbox-readonly" hidden="true">
+
+        <div class="mx-auto content-block">
+            <div class="p-3 history" id="history">
+            </div>
+            <div class="input-group">
+                <input onkeypress="inputcheck(event);" class="form-control" type="text" id="question" name="question" required placeholder="Type here...">
+                <div class="input-group-append">
+                    <button class="btn secondary-btn" type="button" onclick="askYoda()">Send</button>
+                </div>
+            </div>
+            <div class="input-group-append p-2 text-center">
+                <input type="checkbox" id="grammar">
+                <div class="input-group-append">
+                    <p class="text-light mb-0 ml-2">Give me feedback on my grammar/spelling</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-light text-center" id="result"></div>
+
+
+
+
+{% endblock %}
